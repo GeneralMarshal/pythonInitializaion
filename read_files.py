@@ -7,10 +7,14 @@ with open('newfile.txt', 'r') as file:
 
 
 # reading files exercise
-f =  open('testFile.txt')
-f_content = f.read()
-f_content_list = f_content.split("\n")
-f.close()
+try:
+    f_name = input("Type the file name here: ")
+    f =  open(f_name)
+    f_content = f.read()
+    f_content_list = f_content.split("\n")
+    f.close()
 
-print(random.choice(f_content_list))
+    print(random.choice(f_content_list))
+except Exception as e:
+    print("Error ", e)
 
